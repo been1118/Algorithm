@@ -1,37 +1,14 @@
 import java.util.*;
 
 public class Solution {
-    public List<Integer> solution(int []arr) {
-
-        List<Integer> list = new ArrayList<>();
+    public int[] solution(int []arr) {
+        int[] answer = {};
         
-        int temp = -1;
+        HashSet set = new HashSet();
         
-        for(int n : arr) {
-            if(temp != n) list.add(n);
-            temp = n;
+        for(int i=0; i<arr.length; i++){
+            set.add(arr[i]);
         }
-
-        return list;
+        return set;
     }
 }
-
-// public class Solution {
-//     public int[] solution(int []arr) {
-//         int j = 0; 
-//         int[] temp = new int[arr.length];
-//         for (int i = 0; i < arr.length -1; i++) {
-//             if(arr[i] != arr[i+1]) {
-//                 temp[j++] = arr[i];
-//             }        
-//         }
-//         temp[j++] = arr[arr.length-1];
-
-//         int[] answer = new int[j];
-//         for (int i = 0; i < j; i++) {
-//             answer[i] = temp[i];
-//         }
-
-//         return answer; 
-//     }
-// }
