@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -10,17 +11,8 @@ public class Main {
             int b = Integer.parseInt(br.readLine());
             list[i] = b;
         }
-        int t;
+        Arrays.sort(list);
         for (int i = 0; i < a; i++) {
-            for (int j = 0; j < a - 1; j++) {
-                if (list[j] < list[j + 1]) {
-                    t = list[j];
-                    list[j] = list[j + 1];
-                    list[j + 1] = t;
-                }
-            }
-        }
-        for (int i = a - 1; i >= 0; i--) {
             bw.write(list[i] + "\n");
         }
         bw.flush();
