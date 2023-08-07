@@ -5,9 +5,7 @@ class Solution {
         Set<Character> set = new HashSet<>();
         for (int i = 0; i < my_string.length(); i++) {
             char ch = my_string.charAt(i);
-            if (set.contains(ch)) {
-                continue;
-            } else {
+            if (!set.contains(ch)) {
                 set.add(ch);
                 answer += ch;
             }
