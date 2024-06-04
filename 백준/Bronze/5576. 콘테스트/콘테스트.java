@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -11,23 +12,9 @@ public class Main {
                 arr[j] = Integer.parseInt(br.readLine());
             }
 
-            int sum = 0;
+            Arrays.sort(arr);
 
-            for (int j = 0; j < arr.length; j++) {
-                for (int k = j + 1; k < arr.length && k < arr.length; k++) {
-                    if (arr[j] < arr[k]) {
-                        int tmp = arr[j];
-                        arr[j] = arr[k];
-                        arr[k] = tmp;
-                    }
-                }
-            }
-
-            for (int j = 0; j < 3; j++) {
-                sum += arr[j];
-            }
-
-            bw.write(sum + " ");
+            bw.write((arr[9] + arr[8] + arr[7]) + " ");
         }
 
         bw.flush();
