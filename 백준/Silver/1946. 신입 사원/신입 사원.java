@@ -12,24 +12,20 @@ public class Main {
         for (int i = 0; i < T; i++) {
             int N = Integer.parseInt(br.readLine());
 
-            int[][] arr = new int[N][2];
+            int[] arr = new int[N];
 
             for (int j = 0; j < N; j++) {
                 st = new StringTokenizer(br.readLine());
-                arr[j][0] = Integer.parseInt(st.nextToken());
-                arr[j][1] = Integer.parseInt(st.nextToken());
+                int rank = Integer.parseInt(st.nextToken());
+                arr[rank - 1] = Integer.parseInt(st.nextToken());
             }
 
-            Arrays.sort(arr, ((o1, o2) -> {
-                return o1[0] - o2[0];
-            }));
-
             int cnt = 1;
-            int comp = arr[0][1];
+            int comp = arr[0];
             for (int j = 1; j < N; j++) {
-                if (arr[j][1] < comp) {
+                if (arr[j] < comp) {
                     cnt++;
-                    comp = arr[j][1];
+                    comp = arr[j];
                 }
             }
 
