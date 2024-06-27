@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -25,17 +26,9 @@ public class Main {
                 mArr[i] = Integer.parseInt(br.readLine());
             }
 
-            int i = 0, j = 0, cnt = 0;
-            while (N > i && M > j) {
-                if (nArr[i] == mArr[j]) {
-                    cnt++;
-                    i++;
-                    j++;
-                } else if (nArr[i] > mArr[j]) {
-                    j++;
-                } else {
-                    i++;
-                }
+            int cnt = 0;
+            for (int i = 0; i < M; i++) {
+                if (Arrays.binarySearch(nArr, mArr[i]) >= 0) cnt++;
             }
             System.out.println(cnt);
         }
