@@ -8,24 +8,28 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
-        Map<String, Integer> map = new HashMap<>();
+
+        Set<String> set = new HashSet<>();
+
         for (int i = 0; i < N; i++) {
-            map.put(br.readLine(), i);
+            set.add(br.readLine());
         }
-        int cnt = 0;
-        List<String> arr = new ArrayList<>();
+        
+        List<String> list = new ArrayList<>(Math.max(N, M));
+        String str;
         for (int i = 0; i < M; i++) {
-            String str = br.readLine();
-            if (map.containsKey(str)){
-                cnt++;
-                arr.add(str);
-            }
+            str = br.readLine();
+            if (set.contains(str)) list.add(str);
         }
-        Collections.sort(arr);
-        bw.write(cnt + "\n");
-        for (String s : arr) {
+
+        Collections.sort(list);
+
+        bw.write(list.size() + "\n");
+        
+        for (String s : list) {
             bw.write(s + "\n");
         }
+
         bw.flush();
         bw.close();
     }
