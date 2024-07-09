@@ -1,21 +1,18 @@
 import java.io.*;
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int N = Integer.parseInt(br.readLine());
-        int[] dp = new int[N + 5];
-
-        int maxVal = 9999;
-
-        Arrays.fill(dp,  maxVal);
-        dp[3] = dp[5] = 1;
-
-        for(int i = 6; i <= N + 1; i++) {
-            dp[i] = Math.min(dp[i - 3], dp[i - 5]) + 1;
+        if (N == 4 || N == 7) {
+            System.out.println(-1);
+        } else if (N % 5 == 0) {
+            System.out.println(N / 5);
+        } else if (N % 5 == 1 || N % 5 == 3) {
+            System.out.println((N / 5) + 1);
+        } else {
+            System.out.println((N / 5) + 2);
         }
-
-        System.out.println(dp[N] >= maxVal ? -1 : dp[N]);
     }
 }
