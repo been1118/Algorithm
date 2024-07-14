@@ -5,18 +5,21 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int T = Integer.parseInt(br.readLine());
-        int[] dp = new int[11];
-
-        dp[0] = 1;
-        dp[1] = 2;
-        dp[2] = 4;
-
-        for (int i = 3; i < 11; i++) {
-            dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3];
-        }
 
         for (int i = 0; i < T; i++) {
-            bw.write(dp[Integer.parseInt(br.readLine()) - 1] + "\n");
+            int n = Integer.parseInt(br.readLine());
+            if (n == 1) bw.write(1 + "\n");
+            else if (n == 2) bw.write(2 + "\n");
+            else if (n == 3) bw.write(4 + "\n");
+            else if (n == 4) bw.write(7 + "\n");
+            else if (n == 5) bw.write(13 + "\n");
+            else if (n == 6) bw.write(24 + "\n");
+            else if (n == 7) bw.write(44 + "\n");
+            else if (n == 8) bw.write(81 + "\n");
+            else if (n == 9) bw.write(149 + "\n");
+            else if (n == 10) bw.write(274+ "\n");
+            else bw.write(504 + "\n");
+            
         }
 
         bw.flush();
